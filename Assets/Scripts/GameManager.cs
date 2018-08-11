@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
 	public static GameManager Instance { get { return instance; }}
 	public GameObject player;
+	public Text scoreText;
 
 	private static GameManager instance;
 	private int score = 0;
@@ -32,10 +34,10 @@ public class GameManager : MonoBehaviour {
 	public void UpdateScore(int amount) {
 		score += amount;
 		Debug.Log(score);
-		//UpdateHUD();
+		UpdateHUD();
 	}
 
 	void UpdateHUD() {
-
+		scoreText.text = "Score: " + score.ToString();
 	}
 }
