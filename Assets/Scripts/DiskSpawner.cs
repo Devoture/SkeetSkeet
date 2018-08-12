@@ -10,7 +10,9 @@ public class DiskSpawner : MonoBehaviour {
 	public float timeBetweenDisks = 1.0f;
 
 	private bool canSpawn = true;
-	private int random;
+	private int randomSpawn;
+	private int prevDiskSpawnIndex;
+	private int randomDisk;
 	private int prevDiskIndex;
 
 	void Update() {
@@ -20,12 +22,19 @@ public class DiskSpawner : MonoBehaviour {
 	}
 
 	void Spawn() {
-		random = Random.Range(0, spawnLocations.Length);
-		while(random == prevDiskIndex) {
-			random = Random.Range(0, spawnLocations.Length);
+		randomSpawn = Random.Range(0, spawnLocations.Length);
+		randomDisk = Random.Range(0, disks.Length);
+		while(randomSpawn == prevDiskSpawnIndex || randomDisk == prevDiskIndex) {
+			if(randomSpawn == prevDiskSpawnIndex) {
+				randomSpawn = Random.Range(0, spawnLocations.Length);
+			}
+			if(randomDisk == prevDiskIndex) {
+				randomDisk = Random.Range(0, disks.Length);
+			}
 		}
-		prevDiskIndex = random;
-		GameObject disk = Instantiate(disks[0], spawnLocations[prevDiskIndex].transform.position, Quaternion.identity);
+		prevDiskSpawnIndex = randomSpawn;
+		prevDiskIndex = randomDisk;
+		GameObject disk = Instantiate(disks[prevDiskIndex], spawnLocations[prevDiskSpawnIndex].transform.position, Quaternion.identity);
 		if(disk.transform.position.x > 0) {
 			disk.GetComponent<Rigidbody2D>().AddForce(Vector3.left * speed);
 		} else {

@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50517049924623664}
   - component: {fileID: 114452149508590746}
   m_Layer: 0
-  m_Name: Disk
+  m_Name: DiskSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1307845513556140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.06, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -59,7 +59,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: aa44dd1b2498f604488e4c210ca4e867, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -132,4 +132,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644542ba0b3c153418e29e23d49f08eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreToGive: 10
+  scoreToGive: 20
