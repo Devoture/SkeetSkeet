@@ -10,7 +10,7 @@ public class Disk : MonoBehaviour {
 		if(other.gameObject.tag == "Player") {
 			GameManager.Instance.UpdateScore(scoreToGive);
 			GameManager.Instance.ResetPlayerPosition();
-			Destroy(this.gameObject, 0.2f);
+			Destroy(this.gameObject);
 		}
 	}
 }

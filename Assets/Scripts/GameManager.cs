@@ -33,7 +33,9 @@ public class GameManager : MonoBehaviour {
 
 	public void UpdateScore(int amount) {
 		score += amount;
-		Debug.Log(score);
+		if(score <= 0) {
+			score = 0;
+		}
 		UpdateHUD();
 	}
 
